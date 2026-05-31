@@ -1,0 +1,37 @@
+/* ========================================
+   APP MAIN STYLING
+   ======================================== */
+
+@import url("./variables.css");
+@import url("./animations.css");
+
+.main-content {
+  flex: 1;
+  padding: 0;
+  box-sizing: border-box;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ========== ROOT LAYOUT ========== */
+
+#root {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* ========== RESPONSIVE DESIGN ========== */
+
+@media (max-width: 768px) {
+  .main-content {
+    padding: 0;
+  }
+}
+
+@media (max-width: 480px) {
+  .main-content {
+    padding: 0;
+  }
+}

@@ -1,0 +1,176 @@
+/* ========================================
+   NAVBAR - ADVANCED STYLING
+   ======================================== */
+
+@import url("./variables.css");
+@import url("./animations.css");
+
+.navbar {
+  background: linear-gradient(135deg, #000000, #0a0a0a);
+  padding: var(--space-md) var(--space-2xl);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: var(--shadow-lg);
+  border-bottom: 1px solid var(--border-dark);
+  position: sticky;
+  top: 0;
+  z-index: var(--z-sticky);
+  backdrop-filter: blur(10px);
+  background-color: rgba(0, 0, 0, 0.9);
+}
+
+/* ========== NAVBAR BRAND ========== */
+
+.navbar-brand {
+  font-size: var(--font-size-2xl);
+  font-weight: var(--font-weight-bold);
+  color: var(--text-primary);
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  background: linear-gradient(135deg, var(--text-primary), var(--primary-red));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: inherit;
+  background-clip: text;
+  transition: all var(--transition-normal);
+  cursor: pointer;
+  animation: fadeInLeft var(--transition-normal) ease-out;
+}
+
+.navbar-brand:hover {
+  text-shadow: 0 0 20px rgba(229, 9, 20, 0.5);
+  transform: scale(1.05);
+}
+
+/* ========== NAVBAR LINKS CONTAINER ========== */
+
+.navbar-links {
+  display: flex;
+  gap: var(--space-2xl);
+  align-items: center;
+}
+
+/* ========== INDIVIDUAL NAV LINK ========== */
+
+.nav-link {
+  font-size: var(--font-size-base);
+  font-weight: var(--font-weight-medium);
+  padding: var(--space-sm) var(--space-lg);
+  border-radius: var(--radius-md);
+  transition: all var(--transition-normal);
+  position: relative;
+  color: var(--text-secondary);
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  overflow: hidden;
+}
+
+.nav-link::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 3px;
+  background: linear-gradient(
+    90deg,
+    var(--primary-red),
+    var(--primary-red-dark)
+  );
+  transition: width var(--transition-normal);
+}
+
+.nav-link:hover {
+  color: var(--text-primary);
+  background-color: rgba(229, 9, 20, 0.1);
+  transform: translateY(-2px);
+}
+
+.nav-link:hover::before {
+  width: 100%;
+}
+
+.nav-link:active {
+  transform: translateY(0);
+}
+
+/* ========== ACTIVE NAV LINK (when on that page) ========== */
+
+.nav-link.active {
+  color: var(--primary-red);
+  background-color: rgba(229, 9, 20, 0.15);
+  border-bottom: 2px solid var(--primary-red);
+}
+
+.nav-link.active::before {
+  width: 100%;
+  background: var(--primary-red);
+}
+
+/* ========== RESPONSIVE DESIGN ========== */
+
+@media (max-width: 1024px) {
+  .navbar {
+    padding: var(--space-md) var(--space-lg);
+  }
+
+  .navbar-brand {
+    font-size: var(--font-size-xl);
+  }
+
+  .navbar-links {
+    gap: var(--space-lg);
+  }
+
+  .nav-link {
+    padding: var(--space-sm) var(--space-md);
+    font-size: var(--font-size-sm);
+  }
+}
+
+@media (max-width: 768px) {
+  .navbar {
+    padding: var(--space-md);
+    gap: var(--space-md);
+  }
+
+  .navbar-brand {
+    font-size: var(--font-size-lg);
+  }
+
+  .navbar-links {
+    gap: var(--space-lg);
+  }
+
+  .nav-link {
+    padding: var(--space-xs) var(--space-sm);
+    font-size: var(--font-size-sm);
+  }
+}
+
+@media (max-width: 480px) {
+  .navbar {
+    padding: var(--space-sm);
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .navbar-brand {
+    font-size: var(--font-size-lg);
+    width: 100%;
+    text-align: center;
+  }
+
+  .navbar-links {
+    width: 100%;
+    gap: var(--space-md);
+    justify-content: center;
+  }
+
+  .nav-link {
+    padding: var(--space-xs) var(--space-sm);
+    font-size: var(--font-size-sm);
+  }
+}

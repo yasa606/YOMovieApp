@@ -1,0 +1,188 @@
+/* ========================================
+   FAVORITES PAGE - ADVANCED STYLING
+   ======================================== */
+
+@import url("./variables.css");
+@import url("./animations.css");
+
+.favourites {
+  padding: var(--space-3xl) var(--space-xl);
+  width: 100%;
+  box-sizing: border-box;
+  flex: 1;
+  animation: fadeIn var(--transition-normal) ease-out;
+}
+
+/* ========== FAVORITES HEADER ========== */
+
+.favourites h1 {
+  margin-bottom: var(--space-3xl);
+  text-align: center;
+  font-size: var(--font-size-5xl);
+  color: var(--text-primary);
+  background: linear-gradient(135deg, var(--text-primary), var(--primary-red));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+  position: relative;
+  animation: slideInDown var(--transition-normal) ease-out;
+}
+
+.favourites h1::after {
+  content: "";
+  display: block;
+  width: 100px;
+  height: 4px;
+  background: linear-gradient(
+    90deg,
+    var(--primary-red),
+    var(--primary-red-dark)
+  );
+  margin: var(--space-lg) auto 0;
+  border-radius: 2px;
+}
+
+/* ========== EMPTY STATE ========== */
+
+.favourites-empty {
+  text-align: center;
+  padding: var(--space-3xl) var(--space-2xl);
+  background: linear-gradient(
+    135deg,
+    rgba(229, 9, 20, 0.05),
+    rgba(229, 9, 20, 0.02)
+  );
+  border: 2px dashed var(--border-dark);
+  border-radius: var(--radius-xl);
+  margin: var(--space-2xl) auto;
+  max-width: 600px;
+  animation: fadeIn var(--transition-normal) ease-out;
+}
+
+.favourites-empty h2 {
+  margin-bottom: var(--space-lg);
+  font-size: var(--font-size-3xl);
+  color: var(--primary-red);
+  font-weight: var(--font-weight-bold);
+}
+
+.favourites-empty p {
+  color: var(--text-secondary);
+  font-size: var(--font-size-lg);
+  line-height: var(--line-height-relaxed);
+  margin-bottom: var(--space-lg);
+}
+
+/* ========== HEART ICON ANIMATION ========== */
+
+.favourites-empty::before {
+  content: "♥";
+  display: block;
+  font-size: 4rem;
+  color: var(--primary-red);
+  margin-bottom: var(--space-lg);
+  animation: heartbeat 1.3s ease-in-out infinite;
+  opacity: 0.6;
+}
+
+/* ========== MOVIE GRID IN FAVORITES ========== */
+
+.favourites .movies-grid {
+  animation: fadeInUp var(--transition-normal) ease-out;
+}
+
+.favourites .movies-grid > * {
+  animation: fadeInUp var(--transition-normal) ease-out forwards;
+}
+
+/* Stagger animation for each grid item */
+.favourites .movies-grid > :nth-child(1) {
+  animation-delay: 0.05s;
+}
+
+.favourites .movies-grid > :nth-child(2) {
+  animation-delay: 0.1s;
+}
+
+.favourites .movies-grid > :nth-child(3) {
+  animation-delay: 0.15s;
+}
+
+.favourites .movies-grid > :nth-child(4) {
+  animation-delay: 0.2s;
+}
+
+.favourites .movies-grid > :nth-child(5) {
+  animation-delay: 0.25s;
+}
+
+.favourites .movies-grid > :nth-child(n + 6) {
+  animation-delay: 0.3s;
+}
+
+/* ========== RESPONSIVE DESIGN ========== */
+
+@media (max-width: 1200px) {
+  .favourites {
+    padding: var(--space-2xl) var(--space-lg);
+  }
+
+  .favourites h1 {
+    font-size: var(--font-size-4xl);
+  }
+}
+
+@media (max-width: 768px) {
+  .favourites {
+    padding: var(--space-xl) var(--space-md);
+  }
+
+  .favourites h1 {
+    font-size: var(--font-size-3xl);
+    margin-bottom: var(--space-2xl);
+  }
+
+  .favourites-empty {
+    padding: var(--space-2xl) var(--space-md);
+    margin: var(--space-lg) var(--space-md);
+  }
+
+  .favourites-empty h2 {
+    font-size: var(--font-size-2xl);
+  }
+
+  .favourites-empty p {
+    font-size: var(--font-size-base);
+  }
+
+  .favourites-empty::before {
+    font-size: 3rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .favourites {
+    padding: var(--space-lg) var(--space-sm);
+  }
+
+  .favourites h1 {
+    font-size: var(--font-size-2xl);
+  }
+
+  .favourites-empty {
+    padding: var(--space-lg) var(--space-md);
+  }
+
+  .favourites-empty h2 {
+    font-size: var(--font-size-xl);
+  }
+
+  .favourites-empty p {
+    font-size: var(--font-size-sm);
+  }
+
+  .favourites-empty::before {
+    font-size: 2rem;
+  }
+}

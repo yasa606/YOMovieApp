@@ -1,0 +1,144 @@
+/* ========================================
+   ADVANCED CSS VARIABLES & DESIGN SYSTEM
+   ======================================== */
+
+:root {
+  /* ========== PRIMARY COLORS ========== */
+  --primary-red: #e50914;
+  --primary-red-dark: #f40612;
+  --primary-red-light: #ff4757;
+  
+  /* ========== BACKGROUND COLORS ========== */
+  --bg-primary: #0f0f0f;
+  --bg-secondary: #1a1a1a;
+  --bg-tertiary: #242424;
+  --bg-overlay: rgba(0, 0, 0, 0.5);
+  --bg-overlay-light: rgba(255, 255, 255, 0.05);
+  
+  /* ========== TEXT COLORS ========== */
+  --text-primary: #ffffff;
+  --text-secondary: #b3b3b3;
+  --text-tertiary: #999999;
+  --text-muted: #666666;
+  
+  /* ========== ACCENT COLORS ========== */
+  --accent-gold: #ffd700;
+  --accent-blue: #646cff;
+  --accent-blue-hover: #535bf2;
+  --accent-green: #51cf66;
+  --accent-orange: #ff922b;
+  
+  /* ========== BORDER COLORS ========== */
+  --border-dark: #333333;
+  --border-light: #444444;
+  --border-accent: #e50914;
+  
+  /* ========== SHADOWS ========== */
+  --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.1);
+  --shadow-md: 0 4px 8px rgba(0, 0, 0, 0.2);
+  --shadow-lg: 0 8px 16px rgba(0, 0, 0, 0.3);
+  --shadow-xl: 0 12px 24px rgba(0, 0, 0, 0.4);
+  --shadow-red: 0 0 20px rgba(229, 9, 20, 0.3);
+  --shadow-glow: 0 0 30px rgba(229, 9, 20, 0.2);
+  
+  /* ========== BORDER RADIUS ========== */
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 12px;
+  --radius-xl: 16px;
+  --radius-full: 50%;
+  
+  /* ========== SPACING SCALE ========== */
+  --space-xs: 0.25rem;
+  --space-sm: 0.5rem;
+  --space-md: 1rem;
+  --space-lg: 1.5rem;
+  --space-xl: 2rem;
+  --space-2xl: 2.5rem;
+  --space-3xl: 3rem;
+  
+  /* ========== TYPOGRAPHY ========== */
+  --font-family-primary: "Inter", "Segoe UI", system-ui, sans-serif;
+  --font-family-display: "Segoe UI", system-ui, sans-serif;
+  --font-family-mono: "Courier New", monospace;
+  
+  --font-size-xs: 0.75rem;
+  --font-size-sm: 0.875rem;
+  --font-size-base: 1rem;
+  --font-size-lg: 1.125rem;
+  --font-size-xl: 1.25rem;
+  --font-size-2xl: 1.5rem;
+  --font-size-3xl: 2rem;
+  --font-size-4xl: 2.5rem;
+  --font-size-5xl: 3.2rem;
+  
+  --font-weight-light: 300;
+  --font-weight-regular: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+  
+  --line-height-tight: 1.2;
+  --line-height-normal: 1.5;
+  --line-height-relaxed: 1.75;
+  
+  /* ========== TRANSITIONS ========== */
+  --transition-fast: 0.15s ease-in-out;
+  --transition-normal: 0.25s ease-in-out;
+  --transition-slow: 0.35s ease-in-out;
+  --transition-slower: 0.5s ease-in-out;
+  
+  --ease-in: cubic-bezier(0.4, 0, 1, 1);
+  --ease-out: cubic-bezier(0, 0, 0.2, 1);
+  --ease-in-out: cubic-bezier(0.4, 0, 0.2, 1);
+  --ease-spring: cubic-bezier(0.34, 1.56, 0.64, 1);
+  
+  /* ========== Z-INDEX SCALE ========== */
+  --z-base: 0;
+  --z-dropdown: 100;
+  --z-sticky: 200;
+  --z-fixed: 300;
+  --z-modal: 400;
+  --z-tooltip: 500;
+  --z-notification: 600;
+  
+  /* ========== BREAKPOINTS (used in media queries) ========== */
+  /* sm: 640px, md: 768px, lg: 1024px, xl: 1280px */
+  
+  /* ========== GRID & LAYOUT ========== */
+  --grid-gap: var(--space-lg);
+  --grid-gap-mobile: var(--space-md);
+  --container-max-width: 1400px;
+  --container-padding: var(--space-xl);
+  --container-padding-mobile: var(--space-md);
+}
+
+/* ========== LIGHT MODE OVERRIDES (Optional) ========== */
+@media (prefers-color-scheme: light) {
+  :root {
+    --bg-primary: #ffffff;
+    --bg-secondary: #f5f5f5;
+    --bg-tertiary: #efefef;
+    --bg-overlay: rgba(255, 255, 255, 0.8);
+    
+    --text-primary: #000000;
+    --text-secondary: #4a4a4a;
+    --text-tertiary: #777777;
+    --text-muted: #999999;
+    
+    --border-dark: #e0e0e0;
+    --border-light: #d0d0d0;
+  }
+}
+
+/* ========== DARK MODE PREFERENCE ========== */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg-primary: #0a0a0a;
+    --bg-secondary: #151515;
+    --bg-tertiary: #1f1f1f;
+    --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.3);
+    --shadow-md: 0 4px 8px rgba(0, 0, 0, 0.4);
+    --shadow-lg: 0 8px 16px rgba(0, 0, 0, 0.5);
+  }
+}
